@@ -16,7 +16,6 @@
     
     NSMutableSet *headViews;
     
-    AVAudioPlayer *headMovePlayer;
     AVAudioPlayer *headSpinPlayer;
     AVAudioPlayer *headShrinkPlayer;
     AVAudioPlayer *headExpandPlayer;

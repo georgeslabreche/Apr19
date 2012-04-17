@@ -26,7 +26,6 @@
         [self initRotationGesture];
         
         // init mp3 players
-        headMovePlayer = [self getPlayerWithMp3Resource:@"move"];
         headShrinkPlayer = [self getPlayerWithMp3Resource:@"shrink"];
         headExpandPlayer = [self getPlayerWithMp3Resource:@"expand"];
         headSpinPlayer = [self getPlayerWithMp3Resource:@"spin"];
@@ -54,10 +53,6 @@
         NSLog(@"could not get the mp3 sound path.");
         return nil;
     }
-    
-    //NSArray *soundPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"mp3" inDirectory:@"sounds"];
-    
-    //NSString *path = [soundPaths objectAtIndex:0];
     
     NSLog(@"path == \"%@\"", path);
     
@@ -177,17 +172,17 @@
         HeadView *randomHeadView = [headViewArray objectAtIndex:randomHeadViewIndex];
         
         // Stop sound from previous move if it's still playing
-        if([headMovePlayer isPlaying]){
-            [headMovePlayer stop];
+        if([randomHeadView.headMoveAudioPlayer isPlaying]){
+            [randomHeadView.headMoveAudioPlayer stop];
         }
         
         // Play sound
-        if (![headMovePlayer play]) {
+        if (![randomHeadView.headMoveAudioPlayer play]) {
             NSLog(@"could not play sound.");
         }
         
         // Animation. Not the diraction of the animation is the same as the duration of the audio
-        [UIView animateWithDuration: headMovePlayer.duration 
+        [UIView animateWithDuration: randomHeadView.headMoveAudioPlayer.duration 
                               delay: 0.0 
                             options: UIViewAnimationOptionCurveEaseOut
                          animations: ^{

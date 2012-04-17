@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVAudioPlayer.h>
 #import "Head.h"
 
 
 @interface HeadView : UIImageView{
-    
 }
+
+@property AVAudioPlayer* headMoveAudioPlayer;
 
 @end

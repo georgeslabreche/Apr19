@@ -10,14 +10,62 @@
 #import "HeadView.h"
 
 @implementation HeadView
+@synthesize headMoveAudioPlayer;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         [self initSingleTapGesture];
+        
+        self.headMoveAudioPlayer = [self getPlayerWithMp3Resource:@"move"];
     }
     return self;
+}
+
+// init mp3 player
+- (AVAudioPlayer *) getPlayerWithMp3Resource:(NSString*)mp3Filename{
+    
+    AVAudioPlayer *player;
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    if (bundle == nil) {
+        NSLog(@"could not get the main bundle.");
+        return nil;
+    }
+    
+    //The path is the filename.
+    
+    NSString *path = [bundle pathForResource: mp3Filename ofType: @"mp3" inDirectory:@"sounds"];
+    if (path == nil) {
+        NSLog(@"could not get the mp3 sound path.");
+        return nil;
+    }
+    
+    NSLog(@"path == \"%@\"", path);
+    
+    NSURL *url = [NSURL fileURLWithPath: path isDirectory: NO];
+    NSLog(@"url == \"%@\"", url);
+    
+    NSError *error = nil;
+    player = [[AVAudioPlayer alloc]
+              initWithContentsOfURL: url error: &error];
+    if (player == nil) {
+        NSLog(@"error == %@", error);
+        return nil;
+    }
+    
+    // player properties
+    player.volume = 2.0;
+    player.numberOfLoops = 0;
+    
+    if (![player prepareToPlay]) {
+        NSLog(@"could not prepare to play.");
+        return nil;
+    }
+    
+    
+    return player;
 }
 
 // init single tap gestures on head. Not working. Maybe conflicting with gesture recognition of main view?
