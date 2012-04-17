@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HeadView : UIImageView
+@interface HeadView : UIImageView{
+    
+}
 
 @end

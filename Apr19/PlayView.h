@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayView : UIView{
-   
+// Implement the UIGestureRecognizerDelegate protocol so that we can process multiple gestures simultaneously.
+@interface PlayView : UIView <UIGestureRecognizerDelegate>{
+    NSMutableSet *headViews; 	
 }
 
 

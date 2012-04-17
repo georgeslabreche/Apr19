@@ -21,12 +21,13 @@
     if (self) {
         // Initialization code
         // view will be red in case image wasn't loaded.
-        self.backgroundColor = [UIColor redColor];
-        
+        //self.backgroundColor = [UIColor redColor];
         
     }
     return self;
 }
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
