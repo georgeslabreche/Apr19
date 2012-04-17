@@ -11,6 +11,9 @@
 
 // Implement the UIGestureRecognizerDelegate protocol so that we can process multiple gestures simultaneously.
 @interface PlayView : UIView <UIGestureRecognizerDelegate>{
+    // Track previous pinch to figure out if we are getting wider or narrower.
+    CGFloat previousPinchScale;	
+    
     NSMutableSet *headViews;
     
     AVAudioPlayer *headMovePlayer;

@@ -26,10 +26,10 @@
         [self initRotationGesture];
         
         // init mp3 players
-        [self initPlayer:headMovePlayer withMp3Resource:@"move"];
-        //[self initPlayer:headSpinPlayer withMp3Resource:@"spin"];
-//[self initPlayer:headShrinkPlayer withMp3Resource:@"shrink"];
-       // [self initPlayer:headExpandPlayer withMp3Resource:@"expand"];
+        headMovePlayer = [self getPlayerWithMp3Resource:@"move"];
+        headShrinkPlayer = [self getPlayerWithMp3Resource:@"shrink"];
+        headExpandPlayer = [self getPlayerWithMp3Resource:@"expand"];
+        headSpinPlayer = [self getPlayerWithMp3Resource:@"spin"];
         
    
     }
@@ -37,25 +37,27 @@
 }
 
 // init mp3 player
-- (void) initPlayer:(AVAudioPlayer *)player withMp3Resource:(NSString*)mp3Filename{
+- (AVAudioPlayer *) getPlayerWithMp3Resource:(NSString*)mp3Filename{
+    
+    AVAudioPlayer *player;
     
     NSBundle *bundle = [NSBundle mainBundle];
     if (bundle == nil) {
         NSLog(@"could not get the main bundle.");
-        return;
+        return nil;
     }
     
     //The path is the filename.
-    /*
-    NSString *path = [bundle pathForResource: mp3Filename ofType: @"mp3"];
+    
+    NSString *path = [bundle pathForResource: mp3Filename ofType: @"mp3" inDirectory:@"sounds"];
     if (path == nil) {
         NSLog(@"could not get the mp3 sound path.");
-        return;
-    }*/
+        return nil;
+    }
     
-    NSArray *soundPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"mp3" inDirectory:@"sounds"];
+    //NSArray *soundPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"mp3" inDirectory:@"sounds"];
     
-    NSString *path = [soundPaths objectAtIndex:0];
+    //NSString *path = [soundPaths objectAtIndex:0];
     
     NSLog(@"path == \"%@\"", path);
     
@@ -67,7 +69,7 @@
                       initWithContentsOfURL: url error: &error];
     if (player == nil) {
         NSLog(@"error == %@", error);
-        return;
+        return nil;
     }
     
     // player properties
@@ -76,14 +78,11 @@
     
     if (![player prepareToPlay]) {
         NSLog(@"could not prepare to play.");
-        return;
+        return nil;
     }
     
-    if (![player play]) {
-        NSLog(@"could not play sound.");
-    }else{
-         NSLog(@"Play!");
-    }
+   
+    return player;
 }
 
 // init floating heads
@@ -205,7 +204,26 @@
     // Shrink or grow heads depending on the recognizer's scale.
     for(int i = 0; i < headViewArray.count; i++){
         HeadView *headView = [headViewArray objectAtIndex:i];
-
+        
+        // Detect if we are pinching or spreading so that we can play the appropriate sound
+        if (recognizer.scale > previousPinchScale) {
+            // Spread
+            // Play head expand sound.
+            if (![headExpandPlayer play]) {
+                NSLog(@"could not play sound.");
+            }
+            
+        } else if (recognizer.scale < previousPinchScale) {
+            // Pinch
+            // Play head shrink sound
+            if (![headShrinkPlayer play]) {
+                NSLog(@"could not play sound.");
+            }
+        } else {
+            //neither
+        }
+        
+        // Animation
         [UIView animateWithDuration: 0.0 
                               delay: 0.0 
                             options: UIViewAnimationOptionCurveEaseInOut
@@ -215,6 +233,8 @@
                          }
                          completion: NULL
          ];
+        
+        previousPinchScale = recognizer.scale;
     }
 }
 
@@ -224,9 +244,16 @@
     // Operate on all heads
     NSArray *headViewArray = [headViews allObjects];
     
+    // Play head spin sound
+    if (![headSpinPlayer play]) {
+        NSLog(@"could not play sound.");
+    }
+    
     // Rotate head clockwise or counter-clockwise depending on the rotation's angle and direction.
     for(int i = 0; i < headViewArray.count; i++){
         HeadView *headView = [headViewArray objectAtIndex:i];
+        
+        // Animation
         [UIView animateWithDuration: 0.0 
                               delay: 0.0 
                             options: UIViewAnimationOptionCurveEaseInOut
