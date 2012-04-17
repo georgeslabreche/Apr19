@@ -20,13 +20,70 @@
         // background colour of our main view
         self.backgroundColor = [UIColor greenColor];
         
+        // init gestures and animations
         [self initFloatingHeads];
         [self initPinchGesture];
         [self initRotationGesture];
         
+        // init mp3 players
+        [self initPlayer:headMovePlayer withMp3Resource:@"move"];
+        //[self initPlayer:headSpinPlayer withMp3Resource:@"spin"];
+//[self initPlayer:headShrinkPlayer withMp3Resource:@"shrink"];
+       // [self initPlayer:headExpandPlayer withMp3Resource:@"expand"];
+        
    
     }
     return self;
+}
+
+// init mp3 player
+- (void) initPlayer:(AVAudioPlayer *)player withMp3Resource:(NSString*)mp3Filename{
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    if (bundle == nil) {
+        NSLog(@"could not get the main bundle.");
+        return;
+    }
+    
+    //The path is the filename.
+    /*
+    NSString *path = [bundle pathForResource: mp3Filename ofType: @"mp3"];
+    if (path == nil) {
+        NSLog(@"could not get the mp3 sound path.");
+        return;
+    }*/
+    
+    NSArray *soundPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"mp3" inDirectory:@"sounds"];
+    
+    NSString *path = [soundPaths objectAtIndex:0];
+    
+    NSLog(@"path == \"%@\"", path);
+    
+    NSURL *url = [NSURL fileURLWithPath: path isDirectory: NO];
+    NSLog(@"url == \"%@\"", url);
+    
+    NSError *error = nil;
+    player = [[AVAudioPlayer alloc]
+                      initWithContentsOfURL: url error: &error];
+    if (player == nil) {
+        NSLog(@"error == %@", error);
+        return;
+    }
+    
+    // player properties
+    player.volume = 2.0;
+    player.numberOfLoops = 0;
+    
+    if (![player prepareToPlay]) {
+        NSLog(@"could not prepare to play.");
+        return;
+    }
+    
+    if (![player play]) {
+        NSLog(@"could not play sound.");
+    }else{
+         NSLog(@"Play!");
+    }
 }
 
 // init floating heads
@@ -73,6 +130,7 @@
     } 
 }
 
+
 // init pinch gesture handler
 - (void) initPinchGesture{
     NSLog(@"Initialise pinch gesture handler...");
@@ -98,12 +156,18 @@
     [self addGestureRecognizer:rotationRecognizer];
 }
 
+
+// Enable simultaneaous gesture handling... not working. Maybe only works with UIViewController and not UIView?
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
 // on view touch
 - (void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event {
     
     // Using [event allTouches] because for some reason touches.count isn't behaving as expected.
     NSSet *allTouches = [event allTouches];
-  
+    
 	if (allTouches.count == 1) {
         
         // Get a random index for the head view set
@@ -113,23 +177,23 @@
         NSArray *headViewArray = [headViews allObjects];
         HeadView *randomHeadView = [headViewArray objectAtIndex:randomHeadViewIndex];
         
+        // Play sound
+        if (![headMovePlayer play]) {
+            NSLog(@"could not play sound.");
+        }
+        
         // Animation
         [UIView animateWithDuration: 1.0 
-                            delay: 0.0 
+                              delay: 0.0 
                             options: UIViewAnimationOptionCurveEaseInOut
-                            animations: ^{
-                                 // define animation
-                                 randomHeadView.center = [[touches anyObject] locationInView: self];
-                            }
-                            completion: NULL
-        ]; 
+                         animations: ^{
+                             // define animation
+                             randomHeadView.center = [[touches anyObject] locationInView: self];
+                         }
+                         completion: NULL
+         ]; 
 		
 	}
-}
-
-// Enable simultaneaous gesture handling... not working. Maybe only works with UIViewController and not UIView?
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    return YES;
 }
 
 // handle pinch

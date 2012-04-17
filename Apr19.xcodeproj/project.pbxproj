@@ -10,9 +10,11 @@
 		1C08BA9D153CF4E1004CFFE4 /* PlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C08BA9C153CF4E1004CFFE4 /* PlayView.m */; };
 		1C08BADD153D0882004CFFE4 /* heads in Resources */ = {isa = PBXBuildFile; fileRef = 1C08BADC153D0882004CFFE4 /* heads */; };
 		1C08BAE0153D1749004CFFE4 /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C08BADF153D1748004CFFE4 /* HeadView.m */; };
+		1C08BAE9153D439A004CFFE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B43153BC35C008DF0C6 /* CoreGraphics.framework */; };
+		1C08BAEB153D43AC004CFFE4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C08BAEA153D43AC004CFFE4 /* AVFoundation.framework */; };
+		1C08BAF1153D5349004CFFE4 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 1C08BAF0153D5349004CFFE4 /* sounds */; };
 		1CD19B40153BC35C008DF0C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B3F153BC35C008DF0C6 /* UIKit.framework */; };
 		1CD19B42153BC35C008DF0C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B41153BC35C008DF0C6 /* Foundation.framework */; };
-		1CD19B44153BC35C008DF0C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B43153BC35C008DF0C6 /* CoreGraphics.framework */; };
 		1CD19B4A153BC35C008DF0C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CD19B48153BC35C008DF0C6 /* InfoPlist.strings */; };
 		1CD19B4C153BC35C008DF0C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD19B4B153BC35C008DF0C6 /* main.m */; };
 		1CD19B50153BC35C008DF0C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD19B4F153BC35C008DF0C6 /* AppDelegate.m */; };
@@ -25,6 +27,8 @@
 		1C08BADE153D1748004CFFE4 /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
 		1C08BADF153D1748004CFFE4 /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
 		1C08BAE6153D3C6C004CFFE4 /* Head.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Head.h; sourceTree = "<group>"; };
+		1C08BAEA153D43AC004CFFE4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1C08BAF0153D5349004CFFE4 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
 		1CD19B3B153BC35C008DF0C6 /* Apr19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apr19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD19B3F153BC35C008DF0C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1CD19B41153BC35C008DF0C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,9 +46,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C08BAEB153D43AC004CFFE4 /* AVFoundation.framework in Frameworks */,
+				1C08BAE9153D439A004CFFE4 /* CoreGraphics.framework in Frameworks */,
 				1CD19B40153BC35C008DF0C6 /* UIKit.framework in Frameworks */,
 				1CD19B42153BC35C008DF0C6 /* Foundation.framework in Frameworks */,
-				1CD19B44153BC35C008DF0C6 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +59,7 @@
 		1CD19B30153BC35C008DF0C6 = {
 			isa = PBXGroup;
 			children = (
+				1C08BAEA153D43AC004CFFE4 /* AVFoundation.framework */,
 				1CD19B45153BC35C008DF0C6 /* Apr19 */,
 				1CD19B3E153BC35C008DF0C6 /* Frameworks */,
 				1CD19B3C153BC35C008DF0C6 /* Products */,
@@ -96,6 +102,7 @@
 		1CD19B46153BC35C008DF0C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1C08BAF0153D5349004CFFE4 /* sounds */,
 				1C08BADC153D0882004CFFE4 /* heads */,
 				1CD19B47153BC35C008DF0C6 /* Apr19-Info.plist */,
 				1CD19B48153BC35C008DF0C6 /* InfoPlist.strings */,
@@ -157,6 +164,7 @@
 			files = (
 				1CD19B4A153BC35C008DF0C6 /* InfoPlist.strings in Resources */,
 				1C08BADD153D0882004CFFE4 /* heads in Resources */,
+				1C08BAF1153D5349004CFFE4 /* sounds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +248,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Apr19/Apr19-Prefix.pch";
 				INFOPLIST_FILE = "Apr19/Apr19-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -251,7 +261,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Apr19/Apr19-Prefix.pch";
 				INFOPLIST_FILE = "Apr19/Apr19-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

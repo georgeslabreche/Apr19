@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVAudioPlayer.h>
 
 // Implement the UIGestureRecognizerDelegate protocol so that we can process multiple gestures simultaneously.
 @interface PlayView : UIView <UIGestureRecognizerDelegate>{
-    NSMutableSet *headViews; 	
+    NSMutableSet *headViews;
+    
+    AVAudioPlayer *headMovePlayer;
+    AVAudioPlayer *headSpinPlayer;
+    AVAudioPlayer *headShrinkPlayer;
+    AVAudioPlayer *headExpandPlayer;
 }
-
 
 @end
