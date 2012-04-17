@@ -10,10 +10,8 @@
 #import "PlayView.h"
 #import "HeadView.h"
 
-@implementation PlayView
 
-NSInteger HEAD_IMAGE_AVERAGE_WIDTH = 60;
-NSInteger HEAD_IMAGE_AVERAGE_HEIGHT = 100;
+@implementation PlayView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -129,7 +127,7 @@ NSInteger HEAD_IMAGE_AVERAGE_HEIGHT = 100;
 	}
 }
 
-// Enable simultaneaous gesture handling... not working
+// Enable simultaneaous gesture handling... not working. Maybe only works with UIViewController and not UIView?
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
 }

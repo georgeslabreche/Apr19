@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Head.h"
+
 
 @interface HeadView : UIImageView{
     

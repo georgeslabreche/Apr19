@@ -24,6 +24,7 @@
 		1C08BADC153D0882004CFFE4 /* heads */ = {isa = PBXFileReference; lastKnownFileType = folder; path = heads; sourceTree = "<group>"; };
 		1C08BADE153D1748004CFFE4 /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
 		1C08BADF153D1748004CFFE4 /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
+		1C08BAE6153D3C6C004CFFE4 /* Head.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Head.h; sourceTree = "<group>"; };
 		1CD19B3B153BC35C008DF0C6 /* Apr19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apr19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD19B3F153BC35C008DF0C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1CD19B41153BC35C008DF0C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +88,7 @@
 				1C08BA9C153CF4E1004CFFE4 /* PlayView.m */,
 				1C08BADE153D1748004CFFE4 /* HeadView.h */,
 				1C08BADF153D1748004CFFE4 /* HeadView.m */,
+				1C08BAE6153D3C6C004CFFE4 /* Head.h */,
 			);
 			path = Apr19;
 			sourceTree = "<group>";
