@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C08BA9D153CF4E1004CFFE4 /* PlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C08BA9C153CF4E1004CFFE4 /* PlayView.m */; };
+		1C08BADD153D0882004CFFE4 /* heads in Resources */ = {isa = PBXBuildFile; fileRef = 1C08BADC153D0882004CFFE4 /* heads */; };
+		1C08BAE0153D1749004CFFE4 /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C08BADF153D1748004CFFE4 /* HeadView.m */; };
 		1CD19B40153BC35C008DF0C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B3F153BC35C008DF0C6 /* UIKit.framework */; };
 		1CD19B42153BC35C008DF0C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B41153BC35C008DF0C6 /* Foundation.framework */; };
 		1CD19B44153BC35C008DF0C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B43153BC35C008DF0C6 /* CoreGraphics.framework */; };
@@ -16,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C08BA9B153CF4E1004CFFE4 /* PlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayView.h; sourceTree = "<group>"; };
+		1C08BA9C153CF4E1004CFFE4 /* PlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayView.m; sourceTree = "<group>"; };
+		1C08BADC153D0882004CFFE4 /* heads */ = {isa = PBXFileReference; lastKnownFileType = folder; path = heads; sourceTree = "<group>"; };
+		1C08BADE153D1748004CFFE4 /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
+		1C08BADF153D1748004CFFE4 /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
 		1CD19B3B153BC35C008DF0C6 /* Apr19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apr19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD19B3F153BC35C008DF0C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1CD19B41153BC35C008DF0C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -75,6 +83,10 @@
 				1CD19B4E153BC35C008DF0C6 /* AppDelegate.h */,
 				1CD19B4F153BC35C008DF0C6 /* AppDelegate.m */,
 				1CD19B46153BC35C008DF0C6 /* Supporting Files */,
+				1C08BA9B153CF4E1004CFFE4 /* PlayView.h */,
+				1C08BA9C153CF4E1004CFFE4 /* PlayView.m */,
+				1C08BADE153D1748004CFFE4 /* HeadView.h */,
+				1C08BADF153D1748004CFFE4 /* HeadView.m */,
 			);
 			path = Apr19;
 			sourceTree = "<group>";
@@ -82,6 +94,7 @@
 		1CD19B46153BC35C008DF0C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1C08BADC153D0882004CFFE4 /* heads */,
 				1CD19B47153BC35C008DF0C6 /* Apr19-Info.plist */,
 				1CD19B48153BC35C008DF0C6 /* InfoPlist.strings */,
 				1CD19B4B153BC35C008DF0C6 /* main.m */,
@@ -141,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CD19B4A153BC35C008DF0C6 /* InfoPlist.strings in Resources */,
+				1C08BADD153D0882004CFFE4 /* heads in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +167,8 @@
 			files = (
 				1CD19B4C153BC35C008DF0C6 /* main.m in Sources */,
 				1CD19B50153BC35C008DF0C6 /* AppDelegate.m in Sources */,
+				1C08BA9D153CF4E1004CFFE4 /* PlayView.m in Sources */,
+				1C08BAE0153D1749004CFFE4 /* HeadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +208,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -256,6 +273,7 @@
 				1CD19B55153BC35C008DF0C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
