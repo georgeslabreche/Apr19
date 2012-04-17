@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #import "PlayView.h"
 #import "HeadView.h"
+#import "SoundPlayerFactory.h"
 
 
 @implementation PlayView
@@ -26,59 +27,16 @@
         [self initRotationGesture];
         
         // init mp3 players
-        headShrinkPlayer = [self getPlayerWithMp3Resource:@"shrink"];
-        headExpandPlayer = [self getPlayerWithMp3Resource:@"expand"];
-        headSpinPlayer = [self getPlayerWithMp3Resource:@"spin"];
+        SoundPlayerFactory *sdp = [[SoundPlayerFactory alloc]init];
+        headShrinkPlayer = [sdp buildPlayerWithMp3Resource:@"shrink" inDirectory:@"sounds"];
+        headExpandPlayer = [sdp buildPlayerWithMp3Resource:@"expand" inDirectory:@"sounds"];
+        headSpinPlayer = [sdp buildPlayerWithMp3Resource:@"spin" inDirectory:@"sounds"];
         
    
     }
     return self;
 }
 
-// init mp3 player
-- (AVAudioPlayer *) getPlayerWithMp3Resource:(NSString*)mp3Filename{
-    
-    AVAudioPlayer *player;
-    
-    NSBundle *bundle = [NSBundle mainBundle];
-    if (bundle == nil) {
-        NSLog(@"could not get the main bundle.");
-        return nil;
-    }
-    
-    //The path is the filename.
-    
-    NSString *path = [bundle pathForResource: mp3Filename ofType: @"mp3" inDirectory:@"sounds"];
-    if (path == nil) {
-        NSLog(@"could not get the mp3 sound path.");
-        return nil;
-    }
-    
-    NSLog(@"path == \"%@\"", path);
-    
-    NSURL *url = [NSURL fileURLWithPath: path isDirectory: NO];
-    NSLog(@"url == \"%@\"", url);
-    
-    NSError *error = nil;
-    player = [[AVAudioPlayer alloc]
-                      initWithContentsOfURL: url error: &error];
-    if (player == nil) {
-        NSLog(@"error == %@", error);
-        return nil;
-    }
-    
-    // player properties
-    player.volume = 2.0;
-    player.numberOfLoops = 0;
-    
-    if (![player prepareToPlay]) {
-        NSLog(@"could not prepare to play.");
-        return nil;
-    }
-    
-   
-    return player;
-}
 
 // init floating heads
 - (void) initFloatingHeads{

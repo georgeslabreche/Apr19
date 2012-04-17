@@ -11,7 +11,7 @@
 #import "Head.h"
 
 
-@interface HeadView : UIImageView{
+@interface HeadView: UIImageView {
 }
 
 @property NSInteger headId;

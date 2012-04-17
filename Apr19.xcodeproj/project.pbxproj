@@ -14,6 +14,7 @@
 		1C08BAEB153D43AC004CFFE4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C08BAEA153D43AC004CFFE4 /* AVFoundation.framework */; };
 		1C264BFF153DB0070018899E /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 1C264BFE153DB0070018899E /* sounds */; };
 		1C264C01153DB07A0018899E /* move in Resources */ = {isa = PBXBuildFile; fileRef = 1C264C00153DB07A0018899E /* move */; };
+		1C264C05153DB2CB0018899E /* SoundPlayerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C264C04153DB2CB0018899E /* SoundPlayerFactory.m */; };
 		1CD19B40153BC35C008DF0C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B3F153BC35C008DF0C6 /* UIKit.framework */; };
 		1CD19B42153BC35C008DF0C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B41153BC35C008DF0C6 /* Foundation.framework */; };
 		1CD19B4A153BC35C008DF0C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CD19B48153BC35C008DF0C6 /* InfoPlist.strings */; };
@@ -31,6 +32,8 @@
 		1C08BAEA153D43AC004CFFE4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1C264BFE153DB0070018899E /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
 		1C264C00153DB07A0018899E /* move */ = {isa = PBXFileReference; lastKnownFileType = folder; path = move; sourceTree = "<group>"; };
+		1C264C03153DB2CB0018899E /* SoundPlayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundPlayerFactory.h; sourceTree = "<group>"; };
+		1C264C04153DB2CB0018899E /* SoundPlayerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundPlayerFactory.m; sourceTree = "<group>"; };
 		1CD19B3B153BC35C008DF0C6 /* Apr19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apr19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD19B3F153BC35C008DF0C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1CD19B41153BC35C008DF0C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,6 +100,8 @@
 				1C08BADE153D1748004CFFE4 /* HeadView.h */,
 				1C08BADF153D1748004CFFE4 /* HeadView.m */,
 				1C08BAE6153D3C6C004CFFE4 /* Head.h */,
+				1C264C03153DB2CB0018899E /* SoundPlayerFactory.h */,
+				1C264C04153DB2CB0018899E /* SoundPlayerFactory.m */,
 			);
 			path = Apr19;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				1CD19B50153BC35C008DF0C6 /* AppDelegate.m in Sources */,
 				1C08BA9D153CF4E1004CFFE4 /* PlayView.m in Sources */,
 				1C08BAE0153D1749004CFFE4 /* HeadView.m in Sources */,
+				1C264C05153DB2CB0018899E /* SoundPlayerFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
