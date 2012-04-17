@@ -176,15 +176,20 @@
         NSArray *headViewArray = [headViews allObjects];
         HeadView *randomHeadView = [headViewArray objectAtIndex:randomHeadViewIndex];
         
+        // Stop sound from previous move if it's still playing
+        if([headMovePlayer isPlaying]){
+            [headMovePlayer stop];
+        }
+        
         // Play sound
         if (![headMovePlayer play]) {
             NSLog(@"could not play sound.");
         }
         
-        // Animation
-        [UIView animateWithDuration: 1.0 
+        // Animation. Not the diraction of the animation is the same as the duration of the audio
+        [UIView animateWithDuration: headMovePlayer.duration 
                               delay: 0.0 
-                            options: UIViewAnimationOptionCurveEaseInOut
+                            options: UIViewAnimationOptionCurveEaseOut
                          animations: ^{
                              // define animation
                              randomHeadView.center = [[touches anyObject] locationInView: self];
@@ -208,16 +213,36 @@
         // Detect if we are pinching or spreading so that we can play the appropriate sound
         if (recognizer.scale > previousPinchScale) {
             // Spread
+            
+            // If previous gesture was pinch then stop sound for it
+            if([headShrinkPlayer isPlaying]){
+                [headShrinkPlayer stop];
+            }
+            
             // Play head expand sound.
             if (![headExpandPlayer play]) {
                 NSLog(@"could not play sound.");
+    
+                // Try to prepare it again and play
+                [headExpandPlayer prepareToPlay];
+                [headExpandPlayer play];
             }
             
         } else if (recognizer.scale < previousPinchScale) {
             // Pinch
+            
+            // If previous gesture was spread then stop sound for it
+            if([headExpandPlayer isPlaying]){
+                [headExpandPlayer stop];
+            }
+            
             // Play head shrink sound
             if (![headShrinkPlayer play]) {
                 NSLog(@"could not play sound.");
+                
+                // Try to prepare it again and play
+                [headShrinkPlayer prepareToPlay];
+                [headShrinkPlayer play];
             }
         } else {
             //neither
