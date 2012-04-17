@@ -14,6 +14,11 @@
 @interface HeadView : UIImageView{
 }
 
+@property NSInteger headId;
 @property AVAudioPlayer* headMoveAudioPlayer;
+
+// custom constructor
+-(id)initWithFrame:(CGRect)frame andHeadId:(NSInteger) headIdentifier;
+
 
 @end

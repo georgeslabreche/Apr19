@@ -12,12 +12,13 @@
 		1C08BAE0153D1749004CFFE4 /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C08BADF153D1748004CFFE4 /* HeadView.m */; };
 		1C08BAE9153D439A004CFFE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B43153BC35C008DF0C6 /* CoreGraphics.framework */; };
 		1C08BAEB153D43AC004CFFE4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C08BAEA153D43AC004CFFE4 /* AVFoundation.framework */; };
+		1C264BFF153DB0070018899E /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 1C264BFE153DB0070018899E /* sounds */; };
+		1C264C01153DB07A0018899E /* move in Resources */ = {isa = PBXBuildFile; fileRef = 1C264C00153DB07A0018899E /* move */; };
 		1CD19B40153BC35C008DF0C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B3F153BC35C008DF0C6 /* UIKit.framework */; };
 		1CD19B42153BC35C008DF0C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD19B41153BC35C008DF0C6 /* Foundation.framework */; };
 		1CD19B4A153BC35C008DF0C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CD19B48153BC35C008DF0C6 /* InfoPlist.strings */; };
 		1CD19B4C153BC35C008DF0C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD19B4B153BC35C008DF0C6 /* main.m */; };
 		1CD19B50153BC35C008DF0C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD19B4F153BC35C008DF0C6 /* AppDelegate.m */; };
-		1CE7FC1C153D5A75009976A4 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 1CE7FC1B153D5A75009976A4 /* sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		1C08BADF153D1748004CFFE4 /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
 		1C08BAE6153D3C6C004CFFE4 /* Head.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Head.h; sourceTree = "<group>"; };
 		1C08BAEA153D43AC004CFFE4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1C264BFE153DB0070018899E /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
+		1C264C00153DB07A0018899E /* move */ = {isa = PBXFileReference; lastKnownFileType = folder; path = move; sourceTree = "<group>"; };
 		1CD19B3B153BC35C008DF0C6 /* Apr19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apr19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD19B3F153BC35C008DF0C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1CD19B41153BC35C008DF0C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,7 +41,6 @@
 		1CD19B4D153BC35C008DF0C6 /* Apr19-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Apr19-Prefix.pch"; sourceTree = "<group>"; };
 		1CD19B4E153BC35C008DF0C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1CD19B4F153BC35C008DF0C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1CE7FC1B153D5A75009976A4 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,8 @@
 		1CD19B46153BC35C008DF0C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1CE7FC1B153D5A75009976A4 /* sounds */,
+				1C264C00153DB07A0018899E /* move */,
+				1C264BFE153DB0070018899E /* sounds */,
 				1C08BADC153D0882004CFFE4 /* heads */,
 				1CD19B47153BC35C008DF0C6 /* Apr19-Info.plist */,
 				1CD19B48153BC35C008DF0C6 /* InfoPlist.strings */,
@@ -164,7 +167,8 @@
 			files = (
 				1CD19B4A153BC35C008DF0C6 /* InfoPlist.strings in Resources */,
 				1C08BADD153D0882004CFFE4 /* heads in Resources */,
-				1CE7FC1C153D5A75009976A4 /* sounds in Resources */,
+				1C264BFF153DB0070018899E /* sounds in Resources */,
+				1C264C01153DB07A0018899E /* move in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

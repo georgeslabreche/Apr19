@@ -10,16 +10,36 @@
 #import "HeadView.h"
 
 @implementation HeadView
+@synthesize headId;
 @synthesize headMoveAudioPlayer;
 
+// default constructure just gives the same sound to every head
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         [self initSingleTapGesture];
         
-        self.headMoveAudioPlayer = [self getPlayerWithMp3Resource:@"move"];
+        self.headMoveAudioPlayer = [self getPlayerWithMp3Resource:@"move01"];
     }
+    return self;
+}
+
+// custom constructor gives each head its own sound
+-(id)initWithFrame:(CGRect)frame andHeadId:(NSInteger) headIdentifier{
+
+    self = [super initWithFrame:frame];
+    if(self){
+        self.headId = headIdentifier;
+        
+        // init single tap gesture
+        [self initSingleTapGesture];
+        
+        // init audio player
+        NSString *mp3Filename = [NSString stringWithFormat:@"move%d", headIdentifier + 1];
+        self.headMoveAudioPlayer = [self getPlayerWithMp3Resource:mp3Filename];
+    }
+    
     return self;
 }
 
@@ -36,7 +56,7 @@
     
     //The path is the filename.
     
-    NSString *path = [bundle pathForResource: mp3Filename ofType: @"mp3" inDirectory:@"sounds"];
+    NSString *path = [bundle pathForResource: mp3Filename ofType: @"mp3" inDirectory:@"move"];
     if (path == nil) {
         NSLog(@"could not get the mp3 sound path.");
         return nil;

@@ -109,7 +109,7 @@
         
         NSLog(@"head coordinate (%g,%g)", randomX, randomY);
         CGRect headViewRect = CGRectMake(randomX, randomY, headImage.size.width, headImage.size.height);
-        HeadView *headView = [[HeadView alloc]initWithFrame:headViewRect];
+        HeadView *headView = [[HeadView alloc]initWithFrame:headViewRect andHeadId:i];
         
         if(headImage != nil){
             headView.image = headImage;
