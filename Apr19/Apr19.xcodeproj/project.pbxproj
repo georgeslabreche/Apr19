@@ -20,8 +20,8 @@
 		1CD19B4A153BC35C008DF0C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CD19B48153BC35C008DF0C6 /* InfoPlist.strings */; };
 		1CD19B4C153BC35C008DF0C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD19B4B153BC35C008DF0C6 /* main.m */; };
 		1CD19B50153BC35C008DF0C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD19B4F153BC35C008DF0C6 /* AppDelegate.m */; };
-		95C730321540D8F10011404B /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C7302F1540D8F10011404B /* CanvasView.m */; };
-		95C730331540D8F10011404B /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C730311540D8F10011404B /* MainView.m */; };
+		95C730131540CCB60011404B /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C730121540CCB60011404B /* CanvasView.m */; };
+		95C730161540CD740011404B /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C730151540CD740011404B /* MainView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,10 +46,10 @@
 		1CD19B4D153BC35C008DF0C6 /* Apr19-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Apr19-Prefix.pch"; sourceTree = "<group>"; };
 		1CD19B4E153BC35C008DF0C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1CD19B4F153BC35C008DF0C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		95C7302E1540D8F10011404B /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
-		95C7302F1540D8F10011404B /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
-		95C730301540D8F10011404B /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
-		95C730311540D8F10011404B /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		95C730111540CCB60011404B /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		95C730121540CCB60011404B /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
+		95C730141540CD740011404B /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		95C730151540CD740011404B /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +98,6 @@
 		1CD19B45153BC35C008DF0C6 /* Apr19 */ = {
 			isa = PBXGroup;
 			children = (
-				95C7302E1540D8F10011404B /* CanvasView.h */,
-				95C7302F1540D8F10011404B /* CanvasView.m */,
-				95C730301540D8F10011404B /* MainView.h */,
-				95C730311540D8F10011404B /* MainView.m */,
 				1CD19B4E153BC35C008DF0C6 /* AppDelegate.h */,
 				1CD19B4F153BC35C008DF0C6 /* AppDelegate.m */,
 				1CD19B46153BC35C008DF0C6 /* Supporting Files */,
@@ -112,6 +108,10 @@
 				1C08BAE6153D3C6C004CFFE4 /* Head.h */,
 				1C264C03153DB2CB0018899E /* SoundPlayerFactory.h */,
 				1C264C04153DB2CB0018899E /* SoundPlayerFactory.m */,
+				95C730111540CCB60011404B /* CanvasView.h */,
+				95C730121540CCB60011404B /* CanvasView.m */,
+				95C730141540CD740011404B /* MainView.h */,
+				95C730151540CD740011404B /* MainView.m */,
 			);
 			path = Apr19;
 			sourceTree = "<group>";
@@ -199,8 +199,8 @@
 				1C08BA9D153CF4E1004CFFE4 /* PlayView.m in Sources */,
 				1C08BAE0153D1749004CFFE4 /* HeadView.m in Sources */,
 				1C264C05153DB2CB0018899E /* SoundPlayerFactory.m in Sources */,
-				95C730321540D8F10011404B /* CanvasView.m in Sources */,
-				95C730331540D8F10011404B /* MainView.m in Sources */,
+				95C730131540CCB60011404B /* CanvasView.m in Sources */,
+				95C730161540CD740011404B /* MainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

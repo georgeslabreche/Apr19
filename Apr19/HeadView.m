@@ -19,7 +19,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initSingleTapGesture];
+        //[self initSingleTapGesture];
         
         SoundPlayerFactory *sdp = [[SoundPlayerFactory alloc]init];
         self.headMoveAudioPlayer = [sdp buildPlayerWithMp3Resource:@"move01" inDirectory:@"move"];
@@ -35,7 +35,7 @@
         self.headId = headIdentifier;
         
         // init single tap gesture
-        [self initSingleTapGesture];
+        //[self initSingleTapGesture];
         
         // init audio player
         NSString *mp3Filename = [NSString stringWithFormat:@"move%d", headIdentifier + 1];
@@ -46,6 +46,7 @@
     return self;
 }
 
+/*
 // init single tap gestures on head. Not working. Maybe conflicting with gesture recognition of main view?
 - (void) initSingleTapGesture{
     NSLog(@"Initialise single tap gesture handler...");
@@ -54,8 +55,11 @@
                                          initWithTarget: self action: @selector(handleSingleTap:)
                                         ];
     singleTap.numberOfTapsRequired = 1;
-}
+    
+    [self addGestureRecognizer:singleTap];
+}*/
 
+/*
 // Single tap handler
 - (void) handleSingleTap:(UITapGestureRecognizer *) recognizer{
     NSLog(@"Evasive action!");
@@ -71,9 +75,10 @@
                          self.center =  CGPointMake(self.center.x + HEAD_IMAGE_AVERAGE_WIDTH, self.center.y + HEAD_IMAGE_AVERAGE_HEIGHT);
                      }
                      completion: NULL
-     ]; 
+     ];
 
-}
+}*/
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -7,19 +7,25 @@
 //
 
 #import "AppDelegate.h"
-#import "PlayView.h"
+#import "MainView.h"
+//#import "PlayView.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
-    self.window = [[UIWindow alloc] initWithFrame:screenBounds];
+    //self.window = [[UIWindow alloc] initWithFrame:screenBounds];
     
-    PlayView *playView = [[PlayView alloc] initWithFrame:screenBounds];
-    [self.window addSubview:playView];
+    //PlayView *playView = [[PlayView alloc] initWithFrame:screenBounds];
+    
+    UIScreen *screen = [UIScreen mainScreen];
+	mainView = [[MainView alloc] initWithFrame: screen.applicationFrame];
+	self.window = [[UIWindow alloc] initWithFrame: screen.bounds];
+    
+    [self.window addSubview:mainView];
     
     [self.window makeKeyAndVisible];
     return YES;
