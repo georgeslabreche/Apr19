@@ -83,6 +83,14 @@
     }
 }
 
+
+- (void)handleDeviceRotate{
+    //UIDeviceOrientation
+    NSUInteger rotationId = [UIDevice currentDevice].orientation;
+    NSLog(@"Rotated device: %i", rotationId);
+}
+
+
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.

@@ -245,6 +245,51 @@
     
 }
 
+- (void)handleDeviceRotate{
+    
+    NSUInteger rotationId = [UIDevice currentDevice].orientation;
+    NSLog(@"Rotated device: %i", rotationId);
+    
+    NSUInteger rotationAngle = 0;
+    
+    //TODO: use enum: UIDeviceOrientation
+    // Portrait upside down
+    if(rotationId == 2){
+        rotationAngle = 180;   
+    }
+    
+    // Landscape Right
+    else if(rotationId == 3){
+        rotationAngle = 90;
+        
+    }
+    // Landscape left
+    else if(rotationId == 4){
+        rotationAngle = 270;
+    }
+    
+    
+    // Operate on all heads
+    NSArray *headViewArray = [headViews allObjects];
+    
+    
+    // Rotate head clockwise or counter-clockwise depending on the rotation's angle and direction.
+    for(int i = 0; i < headViewArray.count; i++){
+        HeadView *headView = [headViewArray objectAtIndex:i];
+        
+        // Animation
+        [UIView animateWithDuration: 1.0 
+                              delay: 0.0 
+                            options: UIViewAnimationOptionCurveEaseInOut
+                         animations: ^{
+                             // define animation
+                             headView.transform = CGAffineTransformMakeRotation(rotationAngle * M_PI / 180);
+                         }
+                         completion: NULL
+         ];
+    }
+}
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 /*
@@ -253,5 +298,7 @@
     // Drawing code
 }
 */
+
+
 
 @end

@@ -25,15 +25,35 @@
                  nil
                  ];
         
-		index = 0;	//LittleView0 is the one that's initially visible.
+		index = 0;
 		[self addSubview: [views objectAtIndex: index]];
-        
+
         
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]
                                              initWithTarget: self action: @selector(swipe:)
                                              ];
         singleTap.numberOfTapsRequired = 2;
         [self addGestureRecognizer: singleTap];
+        
+        
+        // Notification
+        device = [UIDevice currentDevice];
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        
+        //Send the handleDeviceRotate message to the views
+        //when we get a OrientationDidChange notification from the device.
+        [center addObserver: [views objectAtIndex: 0]
+                   selector: @selector(handleDeviceRotate)
+                       name: UIDeviceOrientationDidChangeNotification
+                     object: device
+         ];
+        
+        [center addObserver: [views objectAtIndex: 1]
+                   selector: @selector(handleDeviceRotate)
+                       name: UIDeviceOrientationDidChangeNotification
+                     object: device
+         ];
+        [device beginGeneratingDeviceOrientationNotifications];
         
     }
     return self;
