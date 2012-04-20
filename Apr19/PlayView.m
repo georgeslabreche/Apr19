@@ -277,9 +277,13 @@
     for(int i = 0; i < headViewArray.count; i++){
         HeadView *headView = [headViewArray objectAtIndex:i];
         
+        // Get random float for animation duration
+        float randomAnimationDelay = randomFloat(0.0, 0.2);
+        float randomAnimationDuration = randomFloat(0.5, 2.5);
+        
         // Animation
-        [UIView animateWithDuration: 1.0 
-                              delay: 0.0 
+        [UIView animateWithDuration: randomAnimationDuration
+                              delay: randomAnimationDelay 
                             options: UIViewAnimationOptionCurveEaseInOut
                          animations: ^{
                              // define animation
@@ -288,6 +292,12 @@
                          completion: NULL
          ];
     }
+}
+
+float randomFloat(float smallNumber, float bigNumber)
+{
+    float diff = bigNumber - smallNumber;
+    return (((float) rand() / RAND_MAX) * diff) + smallNumber;
 }
 
 // Only override drawRect: if you perform custom drawing.
