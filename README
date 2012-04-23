@@ -28,3 +28,4 @@ Concepts to explore:
 	- Simultaneously triggering gesture events by adopting the UIGestureRecognizerDelegate protocol.
 	- Preserving previous transform on a View when applying a new one.
 	- Using an Enum to interpret device orientation number.
+	- Make UIImageView respond to events and gestures.
